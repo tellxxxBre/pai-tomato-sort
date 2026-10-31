@@ -1,0 +1,58 @@
+{
+  "home": {
+    "shoulder_pan": 2108,
+    "shoulder_lift": 451,
+    "elbow_flex": 3416,
+    "wrist_flex": 317,
+    "wrist_roll": 2076,
+    "gripper": 2772
+  },
+  "transit": {
+    "shoulder_pan": 1603,
+    "shoulder_lift": 1318,
+    "elbow_flex": 2662,
+    "wrist_flex": 1609,
+    "wrist_roll": 2075,
+    "gripper": 2766
+  },
+  "seihin": {
+    "shoulder_pan": 2874,
+    "shoulder_lift": 1615,
+    "elbow_flex": 2276,
+    "wrist_flex": 2328,
+    "wrist_roll": 2072,
+    "gripper": 2765
+  },
+  "greenback": {
+    "shoulder_pan": 2483,
+    "shoulder_lift": 1684,
+    "elbow_flex": 341,
+    "wrist_flex": 315,
+    "wrist_roll": 1910,
+    "gripper": 2575
+  },
+  "kikakugai": {
+    "shoulder_pan": 2484,
+    "shoulder_lift": 1378,
+    "elbow_flex": 680,
+    "wrist_flex": 741,
+    "wrist_roll": 1908,
+    "gripper": 2581
+  },
+  "inspect": {
+    "shoulder_pan": 2027,
+    "shoulder_lift": 950,
+    "elbow_flex": 2793,
+    "wrist_flex": 1318,
+    "wrist_roll": 2069,
+    "gripper": 1824
+  },
+  "fuhin": {
+    "shoulder_pan": 2355,
+    "shoulder_lift": 1878,
+    "elbow_flex": 1777,
+    "wrist_flex": 2299,
+    "wrist_roll": 2077,
+    "gripper": 2765
+  }
+}
