@@ -16,13 +16,20 @@
 - ②熟度判定: 差し替え可能な3エンジン — Claude（VLM）/ Jev（判定特化AI・TypeSafe）/ HSV色相しきい値（古典CV）
 - ③箱への配置: 登録ポーズの再生（クレーン式移動: 上げる→回す→降ろす）
 
+### 把持モデルのカメラ構成（手首カメラの効果）
+
+ばら積みからの把持が最大のボトルネックだったため、カメラ構成を同一条件で比較しました。**同じ48本のデモ**から、手首カメラの有無だけを変えた2つのACTモデルを学習し（学習量も同一）、各15回の掴み試行で成功率を計測したところ、**俯瞰カメラのみ 20%（3/15）に対し、俯瞰＋手首の2カメラ構成では 47%（7/15）** と、手首カメラの追加で把持成功率がはっきり改善しました（`eval_grasp.py` で計測。n=15のため確証には追試が必要）。詳しい経緯・考察は提出の説明資料 §6 を参照してください。
+
 ## ディレクトリ
 
 | パス | 内容 |
 |---|---|
 | `tomato_sort/tomato_sort.py` | 本体。掴む→判定→振り分けの通しサイクル実行（把持モデル・判定エンジンをフラグで差し替え可能） |
 | `tomato_sort/record_crate_pick_1cam.sh` | テレオペ実演データ収集（俯瞰1カメラ構成） |
-| `tomato_sort/record_crate_pick.sh` | 同・2カメラ構成版（手首カメラあり） |
+| `tomato_sort/record_crate_pick.sh` | 同・2カメラ構成版（俯瞰＋手首） |
+| `tomato_sort/record_crate_pick_2cam_home.sh` | 同・2カメラ構成版（手首カメラ検証用の収録・掴みのみ50本） |
+| `tomato_sort/make_overhead_only.py` | 2カメラ収録データから「俯瞰のみ」コピーを生成（カメラ構成の比較学習用） |
+| `tomato_sort/eval_grasp.py` | 掴み成功率の評価（俯瞰のみ vs 俯瞰＋手首を同条件でN回試行し成功率を計測） |
 | `tomato_sort/capture_pose.py` / `poses.json` / `verify_poses.py` | 振り分け先ポーズの登録・保存・検品 |
 | `tomato_sort/check_inspect.py` | 判定テスト＋本番同一条件の正解ラベル付きベンチマーク収集 |
 | `tomato_sort/rejudge_benchmark.py` | ベンチマークに対するClaude（VLM）判定の再採点（プロンプト反復改善用） |
